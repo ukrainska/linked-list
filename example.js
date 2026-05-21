@@ -4,7 +4,8 @@ class LinkedList {
     }
 
     append(value) {
-        const newNode = new Node(value);
+        const newNode = new Node();
+        newNode.value = value;
 
         if(this.head === null) {
             this.head = newNode;
@@ -13,15 +14,23 @@ class LinkedList {
         let current = this.head;
 
         while (current.next !== null) {
-            current = current.next;
+            current = current.nextNode;
         }
 
-        current.next = newNode;
+        current.nextNode = newNode;
+    }
+
+    prepand(value) {
+        const newNode = new Node();
+        newNode.value = value;
+
+        newNode.nextNode = this.head;
+        this.head = newNode;
     }
 }
 
 class Node {
-    constructor(value, nextNode)
+    constructor()
     {
         this.value = null;
         this.nextNode = null;
