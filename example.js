@@ -71,6 +71,15 @@ class LinkedList {
         }
         return undefined;
     }
+
+    pop () {
+        if (this.head === null) {
+            return undefined;
+        }
+        let headValue = this.head.value;
+        this.head = this.head.nextNode;
+        return headValue;
+    }
 }
 
 class Node {
