@@ -13,7 +13,7 @@ class LinkedList {
         }
         let current = this.head;
 
-        while (current.next !== null) {
+        while (current.nextNode !== null) {
             current = current.nextNode;
         }
 
@@ -26,6 +26,17 @@ class LinkedList {
 
         newNode.nextNode = this.head;
         this.head = newNode;
+    }
+
+    size() {
+        let current = this.head;
+        let counter = 0;
+
+        while (current !== null) {
+            counter++;
+            current = current.nextNode;
+        }
+        return counter;
     }
 }
 
