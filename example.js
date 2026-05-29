@@ -38,6 +38,13 @@ class LinkedList {
         }
         return counter;
     }
+
+    head () {
+        if (this.head === null) {
+            return undefined;
+        }
+        return this.head;
+    }
 }
 
 class Node {
